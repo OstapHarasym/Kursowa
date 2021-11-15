@@ -1,0 +1,39 @@
+.animation__circle1{
+    width: 10%;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #5e5373;
+    position: relative;
+    animation-name: circle;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+.animation__circle2{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #5e5373;
+    position: relative ;
+    animation-name: circle;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+
+}
+
+@keyframes circle{
+    0%{
+        left: 0%;
+    }
+    50%{
+        border-radius: 0%;
+    }
+    100%{
+        left: 90%;
+    }
+}

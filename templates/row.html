@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Інтеграл
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2 pl-5 pr-5 pt-3">
+    <div class="row">
+        <div class="col-7 p-0">
+            <div class="bg-light h-100 mr-3 border border-dark p-5">
+                <h3>Введіть формулу n - елемента послідовності, та кількість елементів для суми (рахунок починається з 0)</h3>
+                <br>
+                <form action="" method="post">
+                    <p>
+                        {{form.foo.label}}
+                        <br>
+                        {{form.foo()}}
+                    </p>
+                    <p>
+                        {{form.count.label}}
+                        <br>
+                        {{form.count()}}
+                    </p>
+                    <p>
+                        {{form.submit()}}
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="col-5 bg-light p-5  border border-dark">
+                <img src="./../static/Ряд.jpg" width="100%" alt="">
+        </div>
+    </div>
+    <div class="row bg-light mt-3  border border-dark p-5">
+        <h3>Результат: {{result}}</h3>
+    </div>
+</div>
+{% endblock %}

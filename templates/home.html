@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Головна
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2 pl-5 pr-5 bg-secondary">
+    <div class="d-inline-block ml-5 mr-5 mt-3 mb-3">
+        <a href="/integral/">
+            <div class="bg-light p-4 rounded">
+                <p class="text-center font-weight-bold text-dark h5">Інтеграли</p>
+                <img src="./../static/Інтеграл.png" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="d-inline-block ml-5 mr-5 mt-3 mb-3">
+        <a href="/differential/">
+            <div class="bg-light p-4 rounded">
+                <p class="text-center font-weight-bold text-dark h5">Диф. рівняння</p>
+                <img src="./../static/ДифРівняння.png" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="d-inline-block ml-5 mr-5 mt-3 mb-3">
+        <a href="/matrix/">
+            <div class="bg-light p-4 rounded">
+                <p class="text-center font-weight-bold text-dark h5">Матриці</p>
+                <img src="./../static/Матриця.png" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="d-inline-block ml-5 mr-5 mt-3 mb-3">
+        <a href="/row/">
+            <div class="bg-light p-4 rounded">
+                <p class="text-center font-weight-bold text-dark h5">Ряди</p>
+                <img src="./../static/Ряд.jpg" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="d-inline-block ml-5 mr-5 mt-3 mb-3">
+        <a href="/limit/">
+            <div class="bg-light p-4 rounded">
+                <p class="text-center font-weight-bold text-dark h5">Границі</p>
+                <img src="./../static/Границя.png" alt="">
+            </div>
+        </a>
+    </div>
+    <div class="d-inline-block ml-5 mr-5 mt-3 mb-3">
+        <a href="/stats/">
+            <div class="bg-light p-4 rounded">
+                <p class="text-center font-weight-bold text-dark h5">Статистика сайту</p>
+                <img src="./../static/Графік.jpg" alt="">
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

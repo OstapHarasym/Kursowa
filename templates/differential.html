@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Інтеграл
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2 pl-5 pr-5 pt-3">
+    <div class="row">
+        <div class="col-7 p-0">
+            <div class="bg-light h-100 mr-3 border border-dark pt-4 pl-5">
+                <h3>Введіть функцію, y0 та межі</h3>
+                <br>
+                <form action="" method="post">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2">
+                                <p>
+                                    {{form.foo.label}}
+                                </p>
+                                <p>
+                                    {{form.y0.label}}
+                                </p>
+                                <p>
+                                    {{form.up.label}}
+                                </p>
+                                <p>
+                                    {{form.down.label}}
+                                </p>
+                            </div>
+                            <div class="col-10">
+                                <p>
+                                    {{form.foo()}}
+                                </p>
+                                <p>
+                                    {{form.y0()}}
+                                </p>
+                                <p>
+                                    {{form.up()}}
+                                </p>
+                                <p>
+                                    {{form.down()}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        {{form.submit()}}
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="col-5 bg-light p-2  border border-dark">
+                <img src='./../static/chart.png' width="100%" alt="chart">
+        </div>
+    </div>
+    <div class="row bg-light mt-3  border border-dark p-5">
+        <p>{{result}}</p>
+    </div>
+</div>
+{% endblock %}
