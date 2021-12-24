@@ -5,6 +5,7 @@ from sympy import limit, oo, Symbol
 import datetime
 
 
+# Обраховує інтегал, приймає рядок з функцією та межі
 def integrate(foo, up, down):
     def fun(x):
         return eval(foo)
@@ -12,6 +13,7 @@ def integrate(foo, up, down):
     return scipy.integrate.quad(fun, eval(up), eval(down))
 
 
+# Обраховує суму n перших елементів арифметичної прогресії, приймає рядок з функцією та кількість перших елеменів
 def progression_sum(foo, count):
     def fun(x):
         return eval(foo)
@@ -22,6 +24,7 @@ def progression_sum(foo, count):
     return s
 
 
+# Розраховує дані про диф.рівняння, приймає рядок з функцією, межі та початкове значення y, файл з графіком зберігається
 def differential(foo, y0, up, down):
     def fun1(t, y):
         return eval(foo)
@@ -34,14 +37,15 @@ def differential(foo, y0, up, down):
     return [sol]
 
 
+# Обчислює границю, приймає рядок з функцією та значення, куди границя прямує
 def lim(foo, to):
     x = Symbol('x')
     y = eval(foo)
     return limit(y, x, eval(to))
 
 
+# Обчислює визначник матриці, приймає матрицю
 def determinant(args):
-    s = 0.0
     matrix = [[], [], []]
     m = 0
     n = 0
@@ -56,13 +60,17 @@ def determinant(args):
     return scipy.linalg.det(matrix)
 
 
+# Будує графіки і зберігає їхні файли, приймає вибірку даних з БД
 def stats(db):
     lst = []
     dt = []
+    pie_lst = []
     for i in db:
-        lst.append(i.calcType)
-        dt.append(i.calcTime.date().day)
-    st = set(lst)
+        if i.calcTime.date().day > datetime.date.today().day - 7:
+            lst.append(i.calcType)
+            dt.append(i.calcTime.date().day)
+        pie_lst.append(i.calcType)
+    st = set(pie_lst)
     x = []
     for i in range(6, -1, -1):
         x.append(datetime.date.today() - datetime.timedelta(i))
@@ -74,7 +82,7 @@ def stats(db):
     k = 0
     for i in st:
         y.append(0)
-        for j in lst:
+        for j in pie_lst:
             if i == j:
                 y[k] = y[k] + 1
         k += 1
